@@ -299,10 +299,7 @@ fn main() {
 
 | Aspect | Rust | Other Language |
 |---|---|---|
-| Syntax | `Rust : จะใช้ Traits และ struct
-` | `Java :  จะใช้ interface , extend  , implements และ class
- , Ptyhon : จะใช้ class และ overriding โดยใช้วิธี duck Typing หรือ inheritance  
- , C : ไม่มีระบบ polymorphism แต่ใช้ function pointer และ struct แทน` |
+| Syntax | Rust : จะใช้ Traits และ struct | Java : จะใช้ interface , extend  , implements และ class |
 | Semantics / Behavior | `[อธิบาย]` | `[อธิบาย]` |
 | Type System | `[อธิบาย]` | `[อธิบาย]` |
 | Memory Management | `[อธิบาย]` | `[อธิบาย]` |
