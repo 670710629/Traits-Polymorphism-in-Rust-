@@ -13,7 +13,7 @@
 |---|---|---|---|---|
 | 1 | `[ชื่อ-นามสกุล]` | `[รหัส]` | `@[username]` | Concept + Code |
 | 2 | `[ชื่อ-นามสกุล]` | `[รหัส]` | `@[username]` | Code + Demo |
-| 3 | `[ชื่อ-นามสกุล]` | `[รหัส]` | `@[username]` | Rust vs Other Language + PPL |
+| 3 | `ปริยากร คาวิน` | `670710629` | `@670710629` | Rust vs Other Language + PPL |
 | 4 | `[ชื่อ-นามสกุล]` | `[รหัส]` | `@[username]` | Exercises + Common Mistakes |
 
 ---
@@ -299,7 +299,10 @@ fn main() {
 
 | Aspect | Rust | Other Language |
 |---|---|---|
-| Syntax | `[อธิบาย]` | `[อธิบาย]` |
+| Syntax | `Rust : จะใช้ Traits และ struct
+` | `Java :  จะใช้ interface , extend  , implements และ class
+ , Ptyhon : จะใช้ class และ overriding โดยใช้วิธี duck Typing หรือ inheritance  
+ , C : ไม่มีระบบ polymorphism แต่ใช้ function pointer และ struct แทน` |
 | Semantics / Behavior | `[อธิบาย]` | `[อธิบาย]` |
 | Type System | `[อธิบาย]` | `[อธิบาย]` |
 | Memory Management | `[อธิบาย]` | `[อธิบาย]` |
