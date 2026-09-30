@@ -14,7 +14,7 @@
 | 1 | `นพรัตน์ นรนิล` | `670710627` | `@670710627` | Concept + Code |
 | 2 | `[ชื่อ-นามสกุล]` | `[รหัส]` | `@[username]` | Code + Demo |
 | 3 | `ปริยากร คาวิน` | `670710629` | `@670710629` | Rust vs Other Language + PPL |
-| 4 | `[ชื่อ-นามสกุล]` | `[รหัส]` | `@[username]` | Exercises + Common Mistakes |
+| 4 | `พิชญธิดา รักดี` | `670710630` | `@670710630` | Exercises + Common Mistakes |
 
 ---
 
