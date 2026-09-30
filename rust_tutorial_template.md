@@ -448,7 +448,7 @@ fn main() {
 
 **Hint**
 
-`ใช้ trait Payment เพื่อกำหนด Method pay() และใช้ impl กำหนด payment สำหรับแต่ละประเภท`
+`ใช้ trait Payment เพื่อกำหนด Method pay() และใช้ impl กำหนด Payment สำหรับแต่ละประเภท`
 
 **Solution**
 
@@ -495,25 +495,78 @@ fn main() {
 
 ---
 
-### Exercise 2 — `[ชื่อโจทย์]`
+### Exercise 2 — `ระบบจองคอร์ทแบดมินตัน`
 
 **Problem**
 
-`[เขียนโจทย์]`
+`ให้สร้าง trait Booking ที่มี Method book() สำหรับกำหนดพฤติกรรมการจองสนาม จากนั้นสร้าง Struct 4 ประเภท ได้แก่
+
+1.Student สำหรับนักศึกษาจองคอร์ท แสดงข้อความ "Student booked a badminton court"
+
+2.Academic_staffสำหรับบุคลากรจองคอร์ท แสดงข้อความ "Academic staff booked a badminton court"
+
+3.Guest สำหรับบุคคลภายนอกจองคอร์ท แสดงข้อความ "Guest booked a badminton court"
+
+4.Athlete สำหรับนักกีฬาจองคอร์ท แสดงข้อความ "Athlete booked a badminton court"
+`
 
 **Hint**
 
-`[คำใบ้]`
+`ใช้ trait Booking เพื่อกำหนด Method book() และใช้ impl กำหนด Booking สำหรับแต่ละประเภท`
 
 **Solution**
 
 ```rust
-// Solution code
+trait Booking {
+    fn book(&self);
+}
+
+struct Student;
+struct Staff;
+struct Guest;
+struct Athlete;
+
+impl Booking for Student {
+    fn book(&self) {
+        println!("Student booked a badminton court");
+    }
+}
+
+impl Booking for Staff {
+    fn book(&self) {
+        println!("Staff booked a badminton court");
+    }
+}
+
+impl Booking for Guest {
+    fn book(&self) {
+        println!("Guest booked a badminton court");
+    }
+}
+
+impl Booking for Athlete {
+    fn book(&self) {
+        println!("Athlete booked a badminton court");
+    }
+}
+
+fn main() {
+    let student = Student;
+    let staff = Staff;
+    let guest = Guest;
+    let athlete = Athlete;
+
+    student.book();
+    staff.book();
+    guest.book();
+    athlete.book();
+}
 ```
+
 
 **Explanation**
 
-`[อธิบายแนวทางแก้]`
+`Booking เป็น Trait ที่กำหนด Method book() สำหรับการจองคอร์ทจากนั้นสร้าง Struct 4 ประเภท ได้แก่ Student, Staff, Guest และ Athlete โดยแต่ละประเภท Implement Trait Booking และกำหนดการทำงานของ book() แตกต่างกัน`
 
 ---
 
