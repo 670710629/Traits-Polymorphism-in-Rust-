@@ -306,8 +306,6 @@ fn main() {
 | Safety | `[อธิบาย]` | `[อธิบาย]` |
 
 ### Rust Example
-
-# rust
 struct Person {
     name : String
 }
