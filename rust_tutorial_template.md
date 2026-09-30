@@ -438,8 +438,8 @@ fn main() {
 
 **Problem**
 
-`ให้สร้าง trait Payment มี Method pay()สำหรับกำหนดพฤติกรรมการจ่ายเงิน โดยมี Struct 3 ประเภท คือ 1.Cash โดยให้แสดงข้อความ "Pay with Cash" 
-2.QRCode แสดงข้อความ "Pay with QR Code" 
+`ให้สร้าง trait Payment มี Method pay()สำหรับกำหนดพฤติกรรมการจ่ายเงิน โดยมี Struct 3 ประเภท คือ 1.Cash โดยให้แสดงข้อความ "Pay with Cash" <br>
+2.QRCode แสดงข้อความ "Pay with QR Code" <br>
 3.CreditCard แสดงข้อความ "Pay with Credit Card"" `
 
 **Hint**
