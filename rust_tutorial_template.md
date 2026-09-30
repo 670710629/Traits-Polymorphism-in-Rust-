@@ -399,7 +399,7 @@ struct Dog;
 
 fn main() {
     let dog = Dog;
-    dog.make_sound();
+    dog.make_sound();//error
 }
 ```
 
