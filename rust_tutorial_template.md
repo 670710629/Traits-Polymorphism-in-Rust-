@@ -1,9 +1,9 @@
 # Rust Tutorial Project — Principles of Programming Languages
 
 > **สำหรับนักศึกษา:** ใช้ไฟล์นี้เป็น Template สำหรับจัดทำบทเรียน Rust ของกลุ่ม  
-> **Topic No.:** `XX`  
-> **Topic Name:** `[ชื่อหัวข้อ]`  
-> **Group No.:** `XX`
+> **Topic No.:** `16`  
+> **Topic Name:** `Traits & Polymorphism`  
+> **Group No.:** `16`
 
 ---
 
@@ -269,27 +269,27 @@ fn main() {
 
 ### 9.1 Syntax
 
-`[Topic นี้เกี่ยวข้องกับ syntax อย่างไร]`
+`ใช้ trait และ struct ,impl`
 
 ### 9.2 Semantics
 
-`[คำสั่ง/construct เหล่านี้มีความหมายหรือพฤติกรรมอย่างไร]`
+`โดย trait จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ stuct ซึ่งแต่ละ struct สามารถกำหนดการทำงานของพฤติกรรมให้แตกต่างได้ และใช้ impl ในการ implement trait ออกมา`
 
 ### 9.3 Type System
 
-`[เกี่ยวข้องกับ type system อย่างไร ถ้ามี]`
+`static type system , Trait Bound ใช้กำหนดว่า Generic Type ต้อง implement Trait ใด Trait หนึ่ง เพื่อให้ function หรือ struct สามารถเรียกใช้งาน method ที่กำหนดใน Trait ได้`
 
 ### 9.4 Memory / Resource Management
 
-`[เกี่ยวข้องกับ memory หรือ resource management อย่างไร ถ้ามี]`
+`ใช้ ownership และ borrowing ในการจัดการ Memory โดยตรวจสอบใน complile time  โดยไม่จำเป็นต้องใช้ garbage collector`
 
 ### 9.5 Abstraction / Other PPL Concepts
 
-`[อธิบาย abstraction, scope, binding, paradigm หรือแนวคิด PPL อื่นที่เกี่ยวข้อง]`
+`zero-cost abstraction  สามารถใช้ abstraction ระดับสูงโดยไม่เพิ่มค่าใช้จ่ายด้าน Runtime ที่ไม่จำเป็น`
 
 ### 9.6 Why Rust?
 
-`[Rust ใช้แนวคิดนี้เพื่อเพิ่ม safety, reliability หรือ performance อย่างไร]`
+`มี ownership และ borrowing ช่วยจัดการ memory และ safety , Zero-cost Abstraction ,`
 
 ---
 
