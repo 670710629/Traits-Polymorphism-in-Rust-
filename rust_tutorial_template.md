@@ -77,7 +77,8 @@ fn main() {
 
 **Explanation**
 
-`ใช้ Trait Animal เป็น interface ร่วม  แต่ละ Type implement พฤติกรรมของตัวเอง  T: Animal รับ Type ที่ implement Animal  Compiler เลือก implementation ตอน Compile time.`
+`[ใช้ Trait Animal เป็น interface ร่วม  แต่ละ Type implement พฤติกรรมของตัวเอง  T: Animal รับ Type ที่ implement Animal  Compiler เลือก implementation ตอน Compile time]`
+
 ---
 
 ### 4.2 `[Traits]`
@@ -138,6 +139,7 @@ impl Speak for Dog {
 **Explanation**
 
 `impl Speak for Dog คือการบอก compiler ว่า "ตอนนี้ Dog เป็น type ที่ implement Speak แล้ว" ข้างในต้องเขียน method ที่เป็น required ให้ครบ (ในที่นี้คือ speak()) ถ้าเขียนไม่ครบ compiler จะ error ทันที เพราะถือว่า contract ยังไม่สมบูรณ์`
+
 ---
 
 ### 4.4 `[Trait Bounds]`
@@ -168,6 +170,7 @@ fn main() {
 **Explanation**
 
 `<T: Speak> บอกว่า T จะเป็น type อะไรก็ได้ แต่ต้อง implement Speak เท่านั้น เพราะข้างในฟังก์ชันมีการเรียก item.speak() — ถ้าไม่ใส่ bound ไว้ compiler จะไม่รู้ว่า T มี method speak() ไหม และจะ error ทันที`
+
 ---
 
 
@@ -202,6 +205,7 @@ fn main() {
 **Explanation**
 
 `trait Greet สามารถ "อ้างอิง" method จาก trait Named ได้ โดยการประกาศความสัมพันธ์ไว้ล่วงหน้าด้วย Greet: Named หมายความว่า Type ที่ implement Greet ต้อง implement Named ด้วย ทำให้ Greet สามารถเรียกใช้ method ที่กำหนดไว้ใน Named ได้ ในตัวอย่าง Person implement ทั้ง Named และ Greet จึงสามารถเรียก greet() ได้`
+
 ---
 
 ### 4.6 `[Static Dispatch]`
@@ -230,6 +234,7 @@ fn main() {
 **Explanation**
 
 `T: Speak ทำให้ compiler รู้ว่า T คือ Dog ตั้งแต่ compile time จึงสามารถเลือก method speak() ได้โดยตรง`
+
 ---
 
 ### 4.7 `[Dynamic Dispatch]`
@@ -261,10 +266,12 @@ fn main() {
 **Explanation**
 
 `&dyn Speak สามารถรับ type ที่ implement Speak ได้ และการเรียก method จะเลือก implementation ผ่าน vtable ตอน runtime`
+
 ---
 
 ## 5. Important Syntax / Rules
-
+|Syntax / Rule| Meaning | Example |
+|---|---|---|
 | `trait TraitName { ... }` | `ประกาศ trait` | `trait Speak { fn speak(&self) -> String;}` |
 | `impl TraitName for TypeName { ... }` | `implement trait ให้กับ type ที่ระบุ` | `impl Speak for Dog { fn speak(&self) -> String { ... } }` |
 | `fn f<T: Trait>(x: T)` | `trait bound บังคับว่า T ต้อง implement Trait นั้น` | `fn make_it_speak<T: Speak>(item: T) { ... }` |
