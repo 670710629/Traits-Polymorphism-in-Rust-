@@ -434,25 +434,60 @@ fn main() {
 
 > จัดทำแบบฝึกหัด **2 ข้อ** ที่สอดคล้องกับ Topic และมีระดับความยากเหมาะสม
 
-### Exercise 1 — `[ชื่อโจทย์]`
+### Exercise 1 — `ระบบการชำระเงิน`
 
 **Problem**
 
-`[เขียนโจทย์]`
+`ให้สร้าง trait Payment มี Method pay()สำหรับกำหนดพฤติกรรมการจ่ายเงิน โดยมี Struct 3 ประเภท คือ 1.Cash โดยให้แสดงข้อความ "Pay with Cash" 
+2.QRCode แสดงข้อความ "Pay with QR Code" 
+3.CreditCard แสดงข้อความ "Pay with Credit Card"" `
 
 **Hint**
 
-`[คำใบ้]`
+`ใช้ trait Payment เพื่อกำหนด Method pay() และใช้ impl กำหนด payment สำหรับแต่ละประเภท`
 
 **Solution**
 
 ```rust
-// Solution code
+trait Payment {
+ fn pay(&self);
+}
+struct CreditCard;
+struct Cash;
+struct QRCode;
+
+impl Payment for CreditCard {
+ fn pay(&self) {
+     println!("Pay with Credit Card");
+    }
+}
+
+impl Payment for Cash {
+    fn pay(&self) {
+        println!("Pay with Cash");
+    }
+}
+
+impl Payment for QRCode {
+    fn pay(&self) {
+        println!("Pay with QR Code");
+    }
+}
+
+
+fn main() {
+    let credit_card = CreditCard;
+    let cash = Cash;
+    let qr_code = QRCode;
+    credit_card.pay();
+    cash.pay();
+    qr_code.pay();
+}
 ```
 
 **Explanation**
 
-`[อธิบายแนวทางแก้]`
+`Payment เป็น Trait ที่กำหนดว่า Type ที่ Implement Trait นี้จะต้องมี Method pay() แล้วก็กำหนด Struct 3 แบบ คือ CreditCard, Cash และ QRCode ทั้ง 3 Struct Implement Payment เหมือนกัน แต่กำหนดการทำงานของ pay() แตกต่างกันคือส่วนที่พิมพ์บอกด้านในว่าจ่ายกับอะไรดังนั้นเมื่อเรียกแต่ละตัวก็จะจะทำงานตาม Implementation ของตัวเอง`
 
 ---
 
