@@ -336,27 +336,39 @@ fn main() {
 
 ## 7. Common Mistakes
 
-### Mistake 1 — `[ชื่อข้อผิดพลาด]`
+### Mistake 1 — `ลืม Trait Bound ใน Generic Function `
 
 **Problem**
 
-`[อธิบายปัญหา]`
+`เมื่อใช้ Generic Function แล้วเรียก method ที่มาจาก Trait อผต้อง implement Trait นั้นทำให้ Rust ไม่สามารถรู้ได้ว่า method นั้นมีอยู่จริง`
 
 **Incorrect Code**
 
 ```rust
-// Incorrect example
+trait Animal {
+    fn make_sound(&self);
+}
+
+fn make_sound<T>(animal: T) {
+    animal.make_sound(); // Error
+}
 ```
 
 **Correct Code**
 
 ```rust
-// Correct example
+trait Animal {
+    fn make_sound(&self);
+}
+
+fn make_sound<T: Animal>(animal: T) {
+    animal.make_sound();
+}
 ```
 
 **Why?**
 
-`[อธิบายสาเหตุ]`
+`T สามารถเป็น Type อะไรก็ได้ ดังนั้น Rust ไม่สามารถรับประกันได้ว่า T จะมี make_sound() เลยจะต้องเพิ่ม T: Animal เพื่อให้ Rust รู้ว่า T ต้องเป็น Type ที่ implement Animal เมื่อมี Trait Bound แล้ว Rust จึงมั่นใจว่า animal สามารถเรียก make_sound() ได้ `
 
 ---
 
