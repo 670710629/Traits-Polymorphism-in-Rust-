@@ -299,13 +299,14 @@ fn main() {
 
 | Aspect | Rust | Other Language |
 |---|---|---|
-| Syntax | Rust : จะใช้ Traits และ struct , impl | Java : จะใช้ interface , extend  , implements และ class , Python – ใช้ class และ overriding โดยใช้วิธี duck Typing หรือ inheritance  , C++ : ใช้ class และ overriding , virtual method|
-| Semantics / Behavior | `[อธิบาย]` | `[อธิบาย]` |
-| Type System | `[อธิบาย]` | `[อธิบาย]` |
-| Memory Management | `[อธิบาย]` | `[อธิบาย]` |
-| Safety | `[อธิบาย]` | `[อธิบาย]` |
+| Syntax | Rust : จะใช้ Traits และ struct , impl | Java : จะใช้ interface , extend ,implements และ class <br> Python : ใช้ class และ overriding โดยใช้วิธี duck Typing หรือ inheritance  <br> C++ : ใช้ class และ overriding , virtual method |
+| Semantics / Behavior | Rust : โดย trait จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ struct ซึ่งแต่ละ struct สามารถกำหนดการทำงานของพฤติกรรมให้แตกต่างได้  | `[อธิบาย]` |
+| Type System | Rust : Static Typing | java : Static Typing <br> Python : Dynamic Typing <br> C++ : Static Typing  |
+| Memory Management | Rust : ใช้ Ownership + Borrowing   | java : ใช้ Garbage Collector <br> Python : ใช้ Reference Counting  และ Garbage Collection โปรแกรมเมอร์ไม่จำเป็นต้องจัดการเอง  <br> C++ : ใช้แบบ Dynamic Memory Allocation ในขณะ runtime โดยใช้ new และ deleteเพื่อคืนหน่วยความจำ(deallocate)  |
+| Safety | Rust : ปลอดภัยสูง เพราะ ใช้ ownership + borrowing  ในการตรวจสอบ | java : ใช้ Garbage Collector <br> Python : <br> C++ :  |
 
 ### Rust Example
+```rust 
 struct Person {
     name : String
 }
@@ -343,8 +344,8 @@ fn main() {
 ```
 
 ### `[Other Language]` Example
-
-# python
+python
+``` python
 
 class Person:
     def __init__(self, name):
@@ -367,8 +368,9 @@ perr.eat_dinner()
 
 catt = Cat("Mr.Joe")
 catt.eat_dinner()
-
-# java
+```
+ java
+ ``` java 
 interface Eat {
     void eat_dinner();
 }
@@ -406,8 +408,55 @@ public class Main {
     }
     
 }
-
 ```
+c++
+ ``` c++
+#include <iostream>
+using namespace std;
+
+class Eat {
+public:
+    void eat_dinner() {
+    }
+};
+
+class Person : public Eat {
+public:
+    string name;
+
+    Person(string name) {
+        this->name = name;
+    }
+
+    void eat_dinner() {
+        cout << name << " Yummy\n";
+    }
+};
+
+class Cat : public Eat {
+public:
+    string name;
+
+    Cat(string name) {
+        this->name = name;
+    }
+
+    void eat_dinner() {
+        cout << name << " Num Num Num\n";
+    }
+};
+
+int main() {
+    Person perr("Coco");
+    perr.eat_dinner();
+
+    Cat catt("Mr.Joe");
+    catt.eat_dinner();
+
+    return 0;
+}
+```
+---
 
 ### Analysis
 
