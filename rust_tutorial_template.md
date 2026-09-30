@@ -299,7 +299,7 @@ fn main() {
 
 | Aspect | Rust | Other Language |
 |---|---|---|
-| Syntax | Rust : จะใช้ Traits และ struct | Java : จะใช้ interface , extend  , implements และ class |
+| Syntax | Rust : จะใช้ Traits และ struct , impl | Java : จะใช้ interface , extend  , implements และ class , Python – ใช้ class และ overriding โดยใช้วิธี duck Typing หรือ inheritance  , C++ : ใช้ class และ overriding , virtual method|
 | Semantics / Behavior | `[อธิบาย]` | `[อธิบาย]` |
 | Type System | `[อธิบาย]` | `[อธิบาย]` |
 | Memory Management | `[อธิบาย]` | `[อธิบาย]` |
@@ -308,13 +308,86 @@ fn main() {
 ### Rust Example
 
 ```rust
-// Rust code
+struct Person {
+    name : String
+}
+struct Cat {
+    name : String
+}
+
+trait Eat{
+    fn eat_dinner(&self);
+}
+
+impl Eat for Person{
+    fn eat_dinner(&self){
+        println!("{} Yummy",self.name);
+    }
+}
+
+impl Eat for Cat{
+    fn eat_dinner(&self){
+        println!("{} Num Num NUm",self.name);
+    }
+}
+
+fn main() {
+   let perr = Person{
+    name : String::from("Coco")
+   };
+   perr.eat_dinner();
+   let catt = Cat{
+    name : String::from("Mr.Joe")
+   };
+    catt.eat_dinner();
+}
+
 ```
 
 ### `[Other Language]` Example
 
 ```python
 # Other language code
+```
+```java
+interface Eat {
+    void eat_dinner();
+}
+
+class Person implements Eat{
+    String name ;
+
+    Person(String name ){
+        this.name = name ; 
+    }
+
+    public  void eat_dinner(){
+        System.out.println(name +"  Yummy");
+    }
+}
+
+class Cat implements Eat{
+    String name ;
+
+    Cat(String name ){
+        this.name = name ; 
+    }
+
+    public  void eat_dinner(){
+        System.out.println(name + " Num Num NUm");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person perr = new Person("Coco");
+        perr.eat_dinner();
+        Cat catt = new Cat("Mr.Joe");
+        catt.eat_dinner();
+    }
+    
+}
+
 ```
 
 ### Analysis
