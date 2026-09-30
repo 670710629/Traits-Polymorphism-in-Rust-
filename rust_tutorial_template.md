@@ -352,6 +352,11 @@ trait Animal {
 fn make_sound<T>(animal: T) {
     animal.make_sound(); // Error
 }
+
+fn main() {
+    let dog = Dog;
+    dog.make_sound();
+}
 ```
 
 **Correct Code**
@@ -364,6 +369,11 @@ trait Animal {
 fn make_sound<T: Animal>(animal: T) {
     animal.make_sound();
 }
+
+fn main() {
+    let dog = Dog;
+    dog.make_sound();
+}
 ```
 
 **Why?**
@@ -372,27 +382,51 @@ fn make_sound<T: Animal>(animal: T) {
 
 ---
 
-### Mistake 2 — `[ชื่อข้อผิดพลาด]`
+### Mistake 2 — `ลืม Implement Trait ให้กับ Type`
 
 **Problem**
 
-`[อธิบายปัญหา]`
+`ประกาศ Trait และสร้าง Type แล้ว แต่ไม่ได้ใช้ impl เพื่อบอกว่า Type นั้น implement Trait ทำให้ไม่สามารถเรียก method ของ Trait ผ่าน Type นั้นได้`
 
 **Incorrect Code**
 
 ```rust
-// Incorrect example
+trait Animal {
+    fn make_sound(&self);
+}
+
+struct Dog;
+
+fn main() {
+    let dog = Dog;
+    dog.make_sound();
+}
 ```
 
 **Correct Code**
 
 ```rust
-// Correct example
+trait Animal {
+    fn make_sound(&self);
+}
+
+struct Dog;
+
+impl Animal for Dog {
+    fn make_sound(&self) {
+        println!("Woof!");
+    }
+}
+
+fn main() {
+    let dog = Dog;
+    dog.make_sound();
+}
 ```
 
 **Why?**
 
-`[อธิบายสาเหตุ]`
+`การประกาศ trait Animal เป็นการกำหนดว่า Animal นั้นต้องมี make_sound() แต่ไม่ได้หมายความว่า Dog จะมีความสามารถของ Animal ซึ่ง Dog ยังไม่ได้เป็น Animal จนกว่าเราจะเขียน Trait Implementation ที่กำหนดให้ Dog มีความสามารถตาม Animal และบอกวิธีทำงานของความสามารถนั้น`
 
 ---
 
