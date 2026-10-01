@@ -582,11 +582,11 @@ fn main() {
 
 ### 9.2 Semantics
 
-`โดย trait จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ stuct ซึ่งแต่ละ struct สามารถกำหนดการทำงานของพฤติกรรมให้แตกต่างได้ และใช้ impl ในการ implement trait ออกมา ใช้ generic bound เพื่อบังคับว่าประเภทที่ใช้ต้องพฤติกรรมตามที่ traitsกำหนดไว้จึงจะสามารถใช้งานได้`
+`โดย trait จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ stuct ซึ่งแต่ละ struct สามารถกำหนดการทำงานของพฤติกรรมให้แตกต่างได้ และใช้ impl ในการ implement trait ออกมา ใช้ generic bound เพื่อบังคับว่าประเภทที่ใช้ต้องพฤติกรรมตามที่ traitsกำหนดไว้จึงจะสามารถใช้งานได้ , Trait Bound ใช้กำหนดว่า Generic Type ต้อง implement Trait ใด Trait หนึ่ง เพื่อให้ function หรือ struct สามารถเรียกใช้งาน method ที่กำหนดใน Trait ได้`
 
 ### 9.3 Type System
 
-`static type system , Trait Bound ใช้กำหนดว่า Generic Type ต้อง implement Trait ใด Trait หนึ่ง เพื่อให้ function หรือ struct สามารถเรียกใช้งาน method ที่กำหนดใน Trait ได้`
+`static type system `
 
 ### 9.4 Memory / Resource Management
 
@@ -594,7 +594,7 @@ fn main() {
 
 ### 9.5 Abstraction / Other PPL Concepts
 
-`zero-cost abstraction  สามารถใช้ abstraction ระดับสูงโดยไม่เพิ่มค่าใช้จ่ายด้าน Runtime ที่ไม่จำเป็น`
+`zero-cost abstraction สามารถใช้ abstraction ระดับสูงโดยไม่เสียประสิทธิภาพการทำงานลงไป `
 
 ### 9.6 Why Rust?
 
@@ -604,15 +604,15 @@ fn main() {
 
 ## 10. Rust vs. Other Language
 
-**Comparison Language:** `[Python / C / C++ / Java / Kotlin / ...]`
+**Comparison Language:** `[Python / C / C++ / Java ]`
 
 | Aspect | Rust | Other Language |
 |---|---|---|
-| Syntax | Rust : จะใช้ Traits และ struct , impl | Java : จะใช้ interface , extend ,implements และ class <br> Python : ใช้ class และ overriding โดยใช้วิธี duck Typing หรือ inheritance  <br> C++ : ใช้ class และ overriding , virtual method |
-| Semantics / Behavior | Rust : โดย trait จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ struct ซึ่งแต่ละ struct สามารถกำหนดการทำงานของพฤติกรรมให้แตกต่างได้  | java : โดย interface จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ class ซึ่งแต่ละ class สามารถ implements หรือ overriding การทำงานให้แตกต่างได้ <br> Python : แต่ละ class สามารถมี method ชื่อเดียวกันได้แต่กำหนดการทำงานแตกต่างกันได้  โดยใช้  duck Typing หรือ overriding <br> C++ : โดยคลาสหลักสามารถกำหนดmethodให้เป็น virtual method และคลาสลูกสามารถ override methods นั้นได้|
-| Type System | Rust : Static Typing | java : Static Typing <br> Python : Dynamic Typing <br> C++ : Static Typing  |
-| Memory Management | Rust : ใช้ Ownership + Borrowing   | java : ใช้ Garbage Collector <br> Python : ใช้ Reference Counting  และ Garbage Collection โปรแกรมเมอร์ไม่จำเป็นต้องจัดการเอง  <br> C++ : ใช้แบบ Dynamic Memory Allocation ในขณะ runtime โดยใช้ new และ deleteเพื่อคืนหน่วยความจำ(deallocate)  |
-| Safety | Rust : ปลอดภัยสูง เพราะ ใช้ ownership + borrowing  ในการตรวจสอบ | java : ใช้ Garbage Collector <br> Python : มีความยืดหยุ่นจาก dynamic typing แต่ยังมีข้อผิดพลาดบางอย่างจะถูกตรวจพบใน Runtime <br> C++ : โปรแกรมเมอร์สามารถจัดการ Memory โดยตรงได้ ซึ่งอาจทำให้เกิดปัญหาเกี่ยวกับ memory ได้ |
+| Syntax | `Rust : จะใช้ Traits และ struct , impl `| `Java : จะใช้ interface , extends ,implements และ class `<br>` Python : ใช้ class โดยการ  overriding method หรือ duck Typing  `<br>` C++ : ใช้ class Function Overloading , Function Overriding , Virtual Functions ` |
+| Semantics / Behavior | ` Rust : โดย trait จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ struct ซึ่งแต่ละ struct สามารถกำหนดการทำงานของพฤติกรรมให้แตกต่างได้ ` | ` java : โดย interface จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ class ซึ่งแต่ละ class สามารถ implements หรือ overriding การทำงานให้แตกต่างได้ `<br> `Python : แต่ละ class สามารถมี method ชื่อเดียวกันได้แต่กำหนดการทำงานแตกต่างกันได้  โดยใช้  duck Typing หรือ overriding `<br>` C++ : โดยคลาสหลักสามารถกำหนด method ให้เป็น virtual method และคลาสลูกสามารถ override methods นั้นได้ `|
+| Type System | ` Rust : Static Typing ` | ` java : Static Typing `<br>` Python : Dynamic Typing `<br>` C++ : Static Typing  ` |
+| Memory Management |  `Rust : ใช้ Ownership + Borrowing  ` |  `java : ใช้ Garbage Collector `<br>` Python : ใช้ Reference Counting  และ Garbage Collection โปรแกรมเมอร์ไม่จำเป็นต้องจัดการเอง  `<br>` C++ : ใช้แบบ Dynamic Memory Allocation ในขณะ runtime โดยใช้ new และ deleteเพื่อคืนหน่วยความจำ(deallocate) ` |
+| Safety | ` Rust : ปลอดภัยสูง เพราะ ใช้ ownership + borrowing  ในการตรวจสอบ ` |  ` java : ใช้ Garbage Collector `<br>` Python : มีความยืดหยุ่นและใช้งานง่ายจาก dynamic typing  `<br>` C++ : โปรแกรมเมอร์สามารถจัดการ Memory โดยตรงได้ ซึ่งอาจทำให้เกิดปัญหาเกี่ยวกับ memory ได้ ` |
 
 ### Rust Example
 ```rust 
@@ -769,7 +769,7 @@ int main() {
 
 ### Analysis
 
-`[อธิบายความแตกต่างที่สำคัญ และเหตุผลด้านการออกแบบภาษา]`
+`Rust จะใช้ trait เป็นตัวกำหนดพฤติกรรมที่สามารถนำไปใช้ได้ โดยใช้ impl ในการ implement funtiocn ใน trait `
 
 ---
 
