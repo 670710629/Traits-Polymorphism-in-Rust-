@@ -612,7 +612,7 @@ fn main() {
 | Semantics / Behavior | ` Rust : โดย trait จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ struct ซึ่งแต่ละ struct สามารถกำหนดการทำงานของพฤติกรรมให้แตกต่างได้ ` | ` java : โดย interface จะกำหนดพฤติกรรมที่มีร่วมกันให้แต่ละ class ซึ่งแต่ละ class สามารถ implements หรือ overriding การทำงานให้แตกต่างได้ `<br> `Python : แต่ละ class สามารถมี method ชื่อเดียวกันได้แต่กำหนดการทำงานแตกต่างกันได้  โดยใช้  duck Typing หรือ overriding `<br>` C++ : โดยคลาสหลักสามารถกำหนด method ให้เป็น virtual method และคลาสลูกสามารถ override methods นั้นได้ `|
 | Type System | ` Rust : Static Typing ` | ` java : Static Typing `<br>` Python : Dynamic Typing `<br>` C++ : Static Typing  ` |
 | Memory Management |  `Rust : ใช้ Ownership + Borrowing  ` |  `java : ใช้ Garbage Collector `<br>` Python : ใช้ Reference Counting  และ Garbage Collection โปรแกรมเมอร์ไม่จำเป็นต้องจัดการเอง  `<br>` C++ : ใช้แบบ Dynamic Memory Allocation ในขณะ runtime โดยใช้ new และ deleteเพื่อคืนหน่วยความจำ(deallocate) ` |
-| Safety | ` Rust : ปลอดภัยสูง เพราะ ใช้ ownership + borrowing  ในการตรวจสอบ ` |  ` java : ใช้ Garbage Collector `<br>` Python : มีความยืดหยุ่นและใช้งานง่ายจาก dynamic typing  `<br>` C++ : โปรแกรมเมอร์สามารถจัดการ Memory โดยตรงได้ ซึ่งอาจทำให้เกิดปัญหาเกี่ยวกับ memory ได้ ` |
+| Safety | ` Rust : ปลอดภัยสูง เพราะ ใช้ ownership + borrowing  ในการตรวจสอบ ` |  ` java : มีsafety สูงเพราะมีการตรวจตอบโดย JVM หรือ Garbage Collector `<br>` Python : มีความยืดหยุ่นและใช้งานง่ายจาก dynamic typing  `<br>` C++ : โปรแกรมเมอร์สามารถจัดการ Memory โดยตรงได้ ซึ่งอาจทำให้เกิดปัญหาเกี่ยวกับ memory ได้ ` |
 
 ### Rust Example
 ```rust 
@@ -769,7 +769,7 @@ int main() {
 
 ### Analysis
 
-`Rust จะใช้ trait เป็นตัวกำหนดพฤติกรรมที่สามารถนำไปใช้ได้ โดยใช้ impl ในการ implement funtiocn ใน trait `
+`Rust จะใช้ trait เป็นตัวกำหนดพฤติกรรมที่สามารถนำไปใช้ได้แต่สามารถกำหนดการทำงานของพฤติกรรมให้แตกต่างกันได้ โดย trait สามารถมีหลาย method ได้และใช้ impl ในการ implement funtiocn ใน trait `
 
 ---
 
@@ -823,7 +823,7 @@ int main() {
 
 | AI Tool | Purpose | How the Result Was Verified |
 |---|---|---|
-| `[เช่น ChatGPT]` | `[ใช้เพื่ออะไร]` | `[ตรวจสอบอย่างไร]` |
+| `ChatGPT` | `แปลบทความ rust และเอกสารต่างๆ` | `ทำการตรวจทานเพิ่มเติม` |
 | `[AI tool]` | `[ใช้เพื่ออะไร]` | `[ตรวจสอบอย่างไร]` |
 
 ### Declaration
