@@ -349,6 +349,14 @@ trait Animal {
     fn make_sound(&self);
 }
 
+struct Dog;
+
+impl Animal for Dog {
+    fn make_sound(&self) {
+        println!("Woof!");
+    }
+}
+
 fn make_sound<T>(animal: T) {
     animal.make_sound(); // Error
 }
@@ -366,14 +374,23 @@ trait Animal {
     fn make_sound(&self);
 }
 
+struct Dog;
+
+impl Animal for Dog {
+    fn make_sound(&self) {
+        println!("Woof!");
+    }
+}
+
 fn make_sound<T: Animal>(animal: T) {
     animal.make_sound();
 }
 
 fn main() {
     let dog = Dog;
-    dog.make_sound();
+    make_sound(dog);
 }
+
 ```
 
 **Why?**
