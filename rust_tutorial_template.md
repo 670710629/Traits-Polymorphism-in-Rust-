@@ -340,7 +340,7 @@ fn main() {
 
 **Problem**
 
-`เมื่อใช้ Generic Function แล้วเรียก method ที่มาจาก Trait อผต้อง implement Trait นั้นทำให้ Rust ไม่สามารถรู้ได้ว่า method นั้นมีอยู่จริง`
+`เมื่อใช้ Generic Function แล้วเรียก method ที่มาจาก Trait จะต้อง implement Trait นั้นทำให้ Rust ไม่สามารถรู้ได้ว่า method นั้นมีอยู่จริง`
 
 **Incorrect Code**
 
